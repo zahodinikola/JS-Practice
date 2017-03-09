@@ -82,7 +82,7 @@ alert (string + "\nvice verca is\n"+ reversedString);
 // if it is dash we continue looking. when it is differs then we looking for the
 // next dash and increase counter. then iterate till the end of the string
 //
-//--------------------------------------first and only variant ( took about hour because of nonaccurate algorythm, please show me another approach)
+//--------------------------------------first variant ( took about hour because of nonaccurate algorythm, please show me another approach)
 var stringOfWords = "quit   lets count number of words in this short string with long distance of                           dashes. it has to be nineteen";
 //     
 var counter = 0;
@@ -101,6 +101,10 @@ for (var i = 0; i < stringOfWords.length; i ++)
 		if (i == (stringOfWords.length - 1) && flagWasWord == 1) counter++;
 	}
 alert("There are " + counter + " words");
+//--------------------------------------second variant ( took about two minutes but dosen`t work properly yet)
+var stringOfWords = "quit   lets count number of words in this short string with long distance of                           dashes. it has to be nineteen";
+var arrayOfWords = stringOfWords.split(/[ ]*/);
+alert("There are " + (arrayOfWords.length + 1) + " words");
 //----------------------------------------------------------------third task------------------------------------------------------------------------
 
 // i use same approach as in second task

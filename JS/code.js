@@ -32,8 +32,8 @@ function firstTask1()
 				reversedString += yarra[i];
 			}
 	
-		alert (string+"\nvice verca is\n"+reversedString);		//displaying source and reversed string
-	
+		//alert (string+"\nvice verca is\n"+reversedString);		//displaying source and reversed string
+		output1.innerHTML = string + " vice verca is " + reversedString;
 }
 
 
@@ -71,7 +71,8 @@ function firstTask2()
 			reversedString += yarra[i];
 		}
 
-	alert (string+"\nvice verca is\n"+reversedString);
+	//alert (string+"\nvice verca is\n"+reversedString);
+	output2.innerHTML = string + " vice verca is " + reversedString;
 }
 //-----------------------------------------------third variant of task 1 (about 2 mins with testing and correcting error)
 function firstTask3()
@@ -83,7 +84,8 @@ function firstTask3()
 		{
 			reversedString += string[string.length - i];
 		}
-	alert (string + "\nvice verca is\n"+ reversedString);
+	// alert (string + "\nvice verca is\n"+ reversedString);
+	output3.innerHTML = string + " vice verca is " + reversedString;
 }
 //-----------------------------------------------fourth variant of task 1 (doesn`t really work yet)
 function firstTask4()
@@ -93,7 +95,8 @@ function firstTask4()
 	var arrayOfString = string.split("");
 	var reversedString = arrayOfString.reverse();
 	
-	alert (string + "\nvice verca is\n"+ reversedString.toString());
+	// alert (string + "\nvice verca is\n"+ reversedString.toString());
+	output4.innerHTML = string + " vice verca is " + reversedString;
 }
 //------------------------------------------------------------second task------------------------------------------------------------------------
 //
@@ -132,7 +135,8 @@ function secondTask1()
 				ending = "";
 				break;
 		}	
-	alert("There are " + counter + " word" + ending + " in string\n" + "\"" + stringOfWords + "\"");
+	// alert("There are " + counter + " word" + ending + " in string\n" + "\"" + stringOfWords + "\"");
+	output5.innerHTML = "There are " + counter + " word" + ending + " in string " + "\"" + stringOfWords + "\"";
 }
 //--------------------------------------second variant ( dosen`t work properly yet)
 function secondTask2()
@@ -140,8 +144,21 @@ function secondTask2()
 	var stringOfWords = "quit   lets count number of words in this short string with long distance of                           dashes. it has to be twenty";
 	//var regExp = /(\u0020*)/;
 	//alert("reg" + regExp + "Exp\n");
-	var arrayOfWords = stringOfWords.split(/(\s*)/);
-	alert("There are " + arrayOfWords.length + " words");
+	var arrayOfWords = stringOfWords.split(/ +/);
+	// alert("There are " + arrayOfWords.length + " words");
+	var ending = "s";
+	var length = arrayOfWords.length;
+	switch (length)
+		{
+			case 0:
+				ending = "s";
+				counter = "no";
+				break;
+			case 1:
+				ending = "";
+				break;
+		}
+	output6.innerHTML = "There are " + length + " word" + ending + " in string " + "\"" + stringOfWords + "\"";
 }	
 //----------------------------------------------------------------third task------------------------------------------------------------------------
 
@@ -176,5 +193,6 @@ function thirdTask1()
 				};
 							
 		}
-	alert(stringToCaps + " " + capitalised);
+	// alert(stringToCaps + " " + capitalised);
+	output7.innerHTML = stringToCaps + " " + capitalised;
 }	

@@ -2,7 +2,10 @@
 //----------------------------------------------------first variant of task 1 (took about 50 minutes with interruptions)
 function firstTask1()
 {
-		var string =  "abcdefghijklmnopqrstuvwxyz";		//here i create string to transform
+		//var string =  "abcdefghijklmnopqrstuvwxyz";		//here i create string to transform
+		var string = document.getElementById("string1").value;
+		alert(typeof(string));
+		//var string = string1;
 		var array = [];					// it`s an array for the string
 		var yarra = [];					// it`s an array for reversed string
 	
@@ -41,7 +44,8 @@ function firstTask1()
 //-----------------------------------------------second variant of task 1 (about 3 mins with copipasting testing and correcting error)
 function firstTask2()
 {	
-	var string =  "awayanan";				
+	//var string =  "awayanan";
+	var string = document.getElementById("string2").value;			
 	var array = [];					
 	var yarra = [];					
 
@@ -78,7 +82,8 @@ function firstTask2()
 function firstTask3()
 {
 // here i treat string like read only array
-	var string = "awayanan";
+	//var string = "awayanan";
+	var string = document.getElementById("string3").value;
 	var reversedString = "";
 	for ( var i = 1; i <= string.length; i++)
 		{
@@ -91,7 +96,8 @@ function firstTask3()
 function firstTask4()
 {
 // here i treat string like read only array
-	var string = "awayanan";
+	//var string = "awayanan";
+	var string = document.getElementById("string4").value;
 	var arrayOfString = string.split("");
 	var reversedString = arrayOfString.reverse();
 	
@@ -107,8 +113,9 @@ function firstTask4()
 //--------------------------------------first variant ( took about hour because of nonaccurate algorythm, please show me another approach)
 function secondTask1()
 {	
-	var stringOfWords = "quit   lets count number of words in this short string with long distance of                           dashes. it has to be twenty";
-	//     
+	//var stringOfWords = "quit   lets count number of words in this short string with long distance of                           dashes. it has to be twenty";
+	// 
+	var stringOfWords = document.getElementById("string5").value;    
 	var counter = 0;
 	var flagWasWord = 0;
 	//alert(stringOfWords[stringOfWords.length+1]);
@@ -141,7 +148,8 @@ function secondTask1()
 //--------------------------------------second variant ( dosen`t work properly yet)
 function secondTask2()
 {
-	var stringOfWords = "quit   lets count number of words in this short string with long distance of                           dashes. it has to be twenty";
+	//var stringOfWords = "quit   lets count number of words in this short string with long distance of                           dashes. it has to be twenty";
+	var stringOfWords = document.getElementById("string6").value;
 	//var regExp = /(\u0020*)/;
 	//alert("reg" + regExp + "Exp\n");
 	var arrayOfWords = stringOfWords.split(/ +/);
@@ -167,7 +175,8 @@ function secondTask2()
 //--------------------------------------first and only variant ( took about hour because of hurrying)
 function thirdTask1()
 {
-	var stringToCaps = "brown    dog runs away anyway";
+	//var stringToCaps = "brown    dog runs away anyway";
+	var stringToCaps = document.getElementById("string7").value;
 	var capitalised = "";
 		
 	var flagWasDash = 1;
@@ -194,5 +203,5 @@ function thirdTask1()
 							
 		}
 	// alert(stringToCaps + " " + capitalised);
-	output7.innerHTML = stringToCaps + " " + capitalised;
+	output7.innerHTML = "String with capital letters is " + capitalised;
 }	

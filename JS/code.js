@@ -4,7 +4,7 @@ function firstTask1()
 {
 		//var string =  "abcdefghijklmnopqrstuvwxyz";		//here i create string to transform
 		var string = document.getElementById("string1").value;
-		alert(typeof(string));
+		//alert(typeof(string));
 		//var string = string1;
 		var array = [];					// it`s an array for the string
 		var yarra = [];					// it`s an array for reversed string

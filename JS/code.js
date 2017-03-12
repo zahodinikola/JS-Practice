@@ -85,12 +85,22 @@ function firstTask3()
 		}
 	alert (string + "\nvice verca is\n"+ reversedString);
 }
+//-----------------------------------------------fourth variant of task 1 (doesn`t really work yet)
+function firstTask4()
+{
+// here i treat string like read only array
+	var string = "awayanan";
+	var arrayOfString = string.split("");
+	var reversedString = arrayOfString.reverse();
+	
+	alert (string + "\nvice verca is\n"+ reversedString.toString());
+}
 //------------------------------------------------------------second task------------------------------------------------------------------------
 //
 // algorithm of calculation is: we look at string and see first charachter
 // if it is dash we continue looking. when it is differs then we looking for the
 // next dash and increase counter. then iterate till the end of the string
-//
+// and for some unknown reason i used word dash instead of space
 //--------------------------------------first variant ( took about hour because of nonaccurate algorythm, please show me another approach)
 function secondTask1()
 {	
@@ -124,21 +134,23 @@ function secondTask1()
 		}	
 	alert("There are " + counter + " word" + ending + " in string\n" + "\"" + stringOfWords + "\"");
 }
-//--------------------------------------second variant ( took about two minutes but dosen`t work properly yet)
+//--------------------------------------second variant ( dosen`t work properly yet)
 function secondTask2()
 {
 	var stringOfWords = "quit   lets count number of words in this short string with long distance of                           dashes. it has to be twenty";
-	var arrayOfWords = stringOfWords.split(/[ ]*/);
+	//var regExp = /(\u0020*)/;
+	//alert("reg" + regExp + "Exp\n");
+	var arrayOfWords = stringOfWords.split(/(\s*)/);
 	alert("There are " + arrayOfWords.length + " words");
 }	
 //----------------------------------------------------------------third task------------------------------------------------------------------------
 
 // i use same approach as in second task
-//
+// and for some unknown reason i used word dash instead of space
 //--------------------------------------first and only variant ( took about hour because of hurrying)
 function thirdTask1()
 {
-	var stringToCaps = "brown dog runs away";
+	var stringToCaps = "brown    dog runs away anyway";
 	var capitalised = "";
 		
 	var flagWasDash = 1;

@@ -1,0 +1,34 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // k - maximum amount of Fibonacci numbers
+            // fibonacciNumber[] - array of Fibonacci numbers
+            // n - ordering number of Fibonacci number
+            // last index of array n = k - 1 because of first index is 0
+            // if k < 3 (fibonacciNumber[0], fibonacciNumber[1]) = 1
+
+
+            // fibonacciNumber[n] = fibonacciNumber[n-1] + fibonacciNumber[n-2]
+
+            var k = 7;
+            var fibonacciNumber = [];
+
+            function fib(n){
+            if (n < 2) fibonacciNumber[n] = 1;
+            else fibonacciNumber[n] = fibonacciNumber[n-1] + fibonacciNumber[n-2];
+            k -= 1;
+            if (k) fib(n+1);
+            }
+
+            fib(0);
+            alert(fibonacciNumber);
+            console.log(fibonacciNumber);
+
+        </script>
+    </body>
+    </html>

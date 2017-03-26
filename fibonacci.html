@@ -5,17 +5,18 @@
         <title>Document</title>
     </head>
     <body>
+        <div id="output" style="display: inline-block; width: 50%; align-self: center; text-align: center;
+        border: 3px solid black; margin: 25%; font-size: 18pt; font: 700"></div>
         <script>
             // k - maximum amount of Fibonacci numbers
             // fibonacciNumber[] - array of Fibonacci numbers
             // n - ordering number of Fibonacci number
             // last index of array n = k - 1 because of first index is 0
             // if k < 3 (fibonacciNumber[0], fibonacciNumber[1]) = 1
-
-
             // fibonacciNumber[n] = fibonacciNumber[n-1] + fibonacciNumber[n-2]
 
-            var k = 7;
+            var k;
+            while (!k) k = prompt("input here", "");
             var fibonacciNumber = [];
 
             function fib(n){
@@ -24,11 +25,12 @@
             k -= 1;
             if (k) fib(n+1);
             }
-
+            var then = new Date();
             fib(0);
-            alert(fibonacciNumber);
-            console.log(fibonacciNumber);
-
+            var now = new Date();
+            var elapsed = now - then;
+            alert(+then + " " + +now);
+            output.innerHTML = fibonacciNumber + " calculated in " + elapsed + " ms";
         </script>
     </body>
     </html>

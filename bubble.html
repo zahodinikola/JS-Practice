@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //initialisation:   array[n] - series of n+1 elements to be sorted with bubble algorithm
+        //                  n + 1 - number of elements in an array
+        //base of recursion: array of two elements to find maximum of them
+        //decomposition:    first it has to be found max of array[0..n] and put to the last position, then max
+        //                  of array[0..n-1], array[0..n-2] and so on, untill it is done for array[0, 1]. In every
+        //                  particular case we have to look over throuh array from beginning to the end, take numbers
+        //                  by pairs, determine maximum, swap, if higher element is at lower position and go on with
+        //                  indexes raised by one. Now we have array sorted out in a ascending order
+
+        var array = [12, 43, 66, 4, 77, 890, 2, 35, 11, 5, 72, 9, 36, 43, 84];
+        alert(array);
+        bubbleSort(array);
+        alert(array);
+
+        function bubbleSort(array) {
+            var beginning = 0;
+            var ending = array.length -1;
+            function swap(a, b) {
+                var stash = array[a];
+                array[a] = array[b];
+                array[b] = stash;
+            }
+         function bubble(i, k) {
+                if (!k) return;
+                for (var j = 0; j<k; j++) {
+                    if (array[j] > array[j+1]) {
+                        swap (j, (j+1));
+                    } 
+                }
+                bubble(0, k-1);
+            }
+            bubble(beginning, ending);
+        }
+    </script>
+</body>
+</html>

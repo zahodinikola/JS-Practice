@@ -12,17 +12,18 @@
         // base of recursion: empty sequens or one element
         // decomposition: arrayToSort[0]..arrayToSort[pivotPoint-1] < arrayToSort[pivotPoint] < arrayToSort[pivotPoint+1]..arrayToSort[n]
         var arr = [55, 43, 23, 7, 1, 24, 90, 76, 89, 21, 64, 32, 5, 18, 77];
+    //    var layer = 1;
         qSort(arr);
         alert(arr);
 
         function qSort(arrayToSort){
             var lowerIndex = 0;
             var higherIndex = arrayToSort.length - 1;
-            alert (arr + " " + lowerIndex + " " + higherIndex);
+       //     console.log (arr + " " + lowerIndex + " " + higherIndex);
             Sort (lowerIndex, higherIndex);
             
             function findPivotElement(first, last){
-                return (first + last)/2;
+                return Math.round((first + last)/2);
             }
             function switchElements(a, b){
                 var pocket;
@@ -35,61 +36,35 @@
                 var p = findPivotElement(i, k);
                 var savedI = i;
                 var savedK = k;
+                
+                
                 while (i < k){
+           //         alert(arr + "--------layer" + layer);
                     while (arrayToSort[i] < arrayToSort[p]) i++;
-                    alert("1 --- " + arrayToSort[i] + " " + arrayToSort[p] + " " + arrayToSort[k]);
+            //        alert("1 --- " + arrayToSort[i] + " " + arrayToSort[p] + " " + arrayToSort[k]);
                     while (arrayToSort[k] > arrayToSort[p]) k-=1;
-                    alert("2 --- " + arrayToSort[i] + " " + arrayToSort[p] + " " + arrayToSort[k]);
-                    if (i===k) break;
+            //        alert("2 --- " + arrayToSort[i] + " " + arrayToSort[p] + " " + arrayToSort[k]);
+                    if (i>=k) {/*alert("break");*/break;}
                     if (i < k) {
                         if (i==p) {
                             switchElements(i, k);
-                            alert("3 --- " + arrayToSort[i] + " " + arrayToSort[p] + " " + arrayToSort[k]);
+            //                alert("i==p --- " + arrayToSort[i] + " " + arrayToSort[p] + " " + arrayToSort[k]);
                             p=k;
                         }else if (k==p) {
                             switchElements(i, k);
-                            alert("4 --- " + arrayToSort[i] + " " + arrayToSort[p] + " " + arrayToSort[k]);
+           //                 alert("k==p --- " + arrayToSort[i] + " " + arrayToSort[p] + " " + arrayToSort[k]);
                             p=i;
                         }else {
                             switchElements(i, k);
-                            alert("5 --- " + arrayToSort[i] + " " + arrayToSort[p] + " " + arrayToSort[k]);
+           //                 alert("i < k --- " + arrayToSort[i] + " " + arrayToSort[p] + " " + arrayToSort[k]);
                         }
                     }
                 }
 
-                    //     alert(arrayToSort[i] + " " + arrayToSort[p] + " " + arrayToSort[k]);
-                    //     if (arrayToSort[i] < arrayToSort[p] && arrayToSort[k] >= arrayToSort[p]){
-                    //         alert("case1");
-                    //         i++;
-                    //         k -=1;
-                    //         continue;
-                    //     }
-                    //     if (arrayToSort[i] >= arrayToSort [p] && arrayToSort[k] < arrayToSort[p]){
-                    //         alert("case2");
-                    //         alert ("before " + arrayToSort[i] + " " + arrayToSort [k]);
-                    //         switchElements(i, k);
-                    //         alert ("switched - " + i + ": " + arrayToSort[i] + "; " + k + ": " + arrayToSort [k] + "\n" + p + ": " + arrayToSort[p]);
-                    //         alert(i==p);
-                    //         if (i===p) p = k;
-                    //         else if (k===p) p = i;
-                    //         alert ("switched2 - " + i + ": " + arrayToSort[i] + "; " + k + ": " + arrayToSort [k] + "\n" + p + ": " + arrayToSort[p]);
-                    //         i++;
-                    //         k -=1;
-                    //         continue;
-                    //     }
-                    //     if (arrayToSort[i] < arrayToSort[p] && arrayToSort[k] < arrayToSort[p]){
-                    //         alert("case3");
-                    //         i++;
-                    //         continue;
-                    //     }
-                    //     if (arrayToSort[i] > arrayToSort[p] && arrayToSort[k] > arrayToSort[p]){
-                    //         alert("case4");
-                    //         k -=1;
-                    //         continue;
-                    //     }
-                    // }
-                    if (savedI < p) Sort (savedI, p-1); 
-                    if (savedK > p) Sort (p+1, savedK);
+                    
+                layer++;    
+                if (savedI < p) Sort (savedI, p-1); 
+                if (savedK > p) Sort (p+1, savedK);
                 }
                 return;
             }

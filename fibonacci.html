@@ -10,8 +10,8 @@
         <script>
             // k - maximum amount of Fibonacci numbers
             // fibonacciNumber[] - array of Fibonacci numbers
-            // n - ordering number of Fibonacci number
-            // last index of array n = k - 1 because of first index is 0
+            // m - ordering number of Fibonacci number
+            // last index of array m = k - 1 because of first index is 0
             // if k < 3 (fibonacciNumber[0], fibonacciNumber[1]) = 1
             // fibonacciNumber[n] = fibonacciNumber[n-1] + fibonacciNumber[n-2]
 
@@ -20,11 +20,8 @@
             var fibonacciNumber = [];
 
             function fibonacciArray(n){
-            //    var maxAmountOfFibNum = n;
                 calcFibonacciNum (0);
-            //    return;
                 function calcFibonacciNum (m){
-                    alert(m + " " + n);
                     if (m < n) {
                         if (m < 2) fibonacciNumber[m] = 1;
                         else fibonacciNumber[m] = fibonacciNumber[m-1] + fibonacciNumber[m-2];

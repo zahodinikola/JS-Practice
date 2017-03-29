@@ -19,18 +19,22 @@
             while (!k) k = prompt("input here", "");
             var fibonacciNumber = [];
 
-            function fib(n){
-            if (n < 2) fibonacciNumber[n] = 1;
-            else fibonacciNumber[n] = fibonacciNumber[n-1] + fibonacciNumber[n-2];
-            k -= 1;
-            if (k) fib(n+1);
+            function fibonacciArray(n){
+            //    var maxAmountOfFibNum = n;
+                calcFibonacciNum (0);
+            //    return;
+                function calcFibonacciNum (m){
+                    alert(m + " " + n);
+                    if (m < n) {
+                        if (m < 2) fibonacciNumber[m] = 1;
+                        else fibonacciNumber[m] = fibonacciNumber[m-1] + fibonacciNumber[m-2];
+                        calcFibonacciNum(m+1);
+                    }
+                }
             }
-            var then = new Date();
-            fib(0);
-            var now = new Date();
-            var elapsed = now - then;
-            alert(+then + " " + +now);
-            output.innerHTML = fibonacciNumber + " calculated in " + elapsed + " ms";
+
+            fibonacciArray(k);
+            output.innerHTML = fibonacciNumber;
         </script>
     </body>
     </html>

@@ -1,0 +1,65 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Node(val){
+            this.value = val;
+            this.left = null;
+            this.right = null;
+        }
+
+        var tree = new Node("root");
+
+        tree.left = new Node("left");
+        tree.right = new Node("right");
+
+        tree.left.left = new Node("left-left");
+        tree.left.right = new Node("left-right");
+
+        tree.right.left = new Node("right-left");
+        tree.right.right = null;
+
+        tree.right.left.right = new Node("right-left-right");
+        tree.right.left.left = null;      
+        
+        var counter = 0;
+        var deepest = 0;
+
+        function deepestNode(node){
+            counter++;
+            if (node.left){
+                deepestNode(node.left);
+            }
+            if (node.right){
+                deepestNode(node.right);
+            }
+            if (deepest < counter) deepest = counter;
+            counter--;
+        }
+        
+        deepestNode(tree);
+        alert(deepest);
+        
+    </script>
+</body>
+</html>

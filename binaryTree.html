@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
+    <script type="text/javascript">
         function Node(val){
             this.value = val;
             this.left = null;
@@ -28,22 +28,57 @@
         tree.right.left.right = new Node("right-left-right");
         tree.right.left.left = null;      
         
+		tree.right.left.right.left = new Node("right-left-right-left");	 
+		tree.right.left.right.right = new Node("right-left-right-right");	
+		
         function maxNodeDepth(tree){
             var deepest = 0;
+
             function deepestNode(node, c){
-            if (node.left){ 
-                deepestNode(node.left, c+1);
+				if (node.left){ 
+					deepestNode(node.left, c+1);
+				}
+				
+				if (node.right){
+					deepestNode(node.right, c+1);
+				}
+				
+				if (deepest < c) deepest = c;
             }
-            if (node.right){
-                deepestNode(node.right, c+1);
-            }
-            if (deepest < c) deepest = c;
-            }
+			
             deepestNode(tree, 0);
             return deepest;
         }
-
+		
+		function getLongestPath(node) {
+		
+			if (isNodeEmpty(node)) {
+			
+				return 0;
+			}
+			
+			var longestPath = 0;
+			if ( !isNodeEmpty(node.left)) {
+			
+				longestPath = getLongestPath(node.left) + 1;
+			}
+			
+			if ( !isNodeEmpty(node.right)) {
+			
+				var rightPath = getLongestPath(node.right) + 1;
+				longestPath = (longestPath < rightPath) ? rightPath : longestPath;
+			}
+			
+			return longestPath;
+		}
+		
+		function isNodeEmpty(node) {
+			
+			return node === null || typeof node === "undefined";
+		}
+		
         alert(maxNodeDepth(tree));
+		alert(getLongestPath(tree));
 
     </script>
 </body>

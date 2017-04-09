@@ -11,24 +11,26 @@
 
         // Find N-th largest element in unsorted array without using sort.
         //N=3, Input={1,8,3,2,3,7,10}, Result=7
-
+        // took about an hour
         //array to work with
 
         var array = [1, 8, 3, 2, 3, 7, 10];
 
-        var msg = findNthElement(array);
+        //
+        var n = +prompt("input what nth element by value", "");
+
+        var msg = findNthElement(array,n);
         alert(msg);
 
         //function that works out array
-        //algorithm: 
+        //algorithm: create auxiliary array that contains in fact sorted in reversed direction source array
+        // with given depth, that determined with variable n
+        //
+        // -------------------try to find another approach-------------------
         
-        function findNthElement(array){
+        function findNthElement(array,n){
             var length = array.length;
-            //alert("length is: " + length);
-            var n = +prompt("input what nth element by value", "");
-            //alert("" + n + " : " + typeof n);
             var previousMax = Infinity;
-            //alert(previous);
             var max = [];
             
             for(var i = 0; i < n; i++)

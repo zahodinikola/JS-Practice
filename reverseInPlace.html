@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //first thing is array to be reversed
+        var array1 = [];
+        var array2 = ['a', 'b', 'c', 'd', 'e', 'f', 123, 6, 90, 'x', 'adf'];
+        var array3 = [3, 4, 5, 11, 654, 6, -5, 55, 900, 12, -477, 38, 0];
+
+        //call function defined later with different arguments
+        // first variant took 20mins (in element script..script) and returned
+        // "undefined" with array1
+        // correction and testing took another 30 mins
+        // some troubles added tags in comments, that supposed not to affect
+        // execution
+
+        var msg = reverseArray(array3);
+        alert(msg);
+        
+        
+        //define function, that reverses array
+          
+        function reverseArray(array){
+            //alert("length" + array.length);
+            if (array.length === 0) return "empty array";
+            var lowerIndex = 0;
+            var higherIndex = array.length - 1;
+            var stash;
+
+            while (lowerIndex < higherIndex) {
+                stash = array[lowerIndex];
+                array[lowerIndex] = array[higherIndex];
+                array[higherIndex] = stash;
+                lowerIndex++;
+                higherIndex--;
+            }
+            return "reversed array: " + array;           
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

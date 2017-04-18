@@ -10,7 +10,96 @@
     <script>
 
          //There is an array with multiple duplicated elements. Find them (we will need to discuss dictionaries before this task).
+         //
+        // calling
+        // dictionaries
+        // hashmaps
+        // maps
+        // var s = { "id": "UX123", "name": "Peter"}
+        // s["id"]
+        // s[id]
+        // var dict = {}
+        // dict["UK123"] = { "name": "Peter", "last_name" : "Pen" }
+        // dict["FR5454"] = { "name": "Marine", "last_name" : "Le Pen" }
+        // dict["CCC"] = 123;
 
-    </script>
+            // <script>
+            // var arrayToBeHandled = ['2', '3', '4', '56', '23', '234', '66', '75', '-332', '2', '2', '0', '-23', '43',
+            //                                 '56', '22', '543', '0', '11', '56', '765', '352', '0'];
+                                            
+            // var dictionary = {};
+
+            // for (var i = 0; i < arrayToBeHandled.length; i++) {
+            //  var dictItem = dictionary[arrayToBeHandled[i]];
+            //  if (typeof dictItep === 'undefined') {
+            //  	dictItem = {};
+            //     dictionary[arrayToBeHandled[i]] = dictItem;
+            //  }
+            
+            //  dictItem["index" + i] = i;
+            // }
+            
+            // for (var key in Object.keys(dictionary))
+            // {    
+            //   var dictItem = dictionary[key];
+            
+            //   if (typeof dictItem === 'undefined') {
+            //   	continue;
+            //   }
+            
+            //   document.writeln(key);   
+            //   document.writeln(': [');
+            
+            //   for (var dictItemKey in Object.keys(dictItem))
+            //   {
+            //      document.writeln(dictItemKey);
+            //   }
+            
+            //   document.writeln(']');
+            //   document.writeln('</br>');
+            // }
+            // </script>
+            // </p>
+
+            var arrayToBeHandled = ['2', '3', '4', '56', '23', '234', '66', '75', '-332', '2',
+                 '2', '0', '-23', '43', '56', '22', '543', '0', '11', '56', '765', '352', '0'];
+                                
+            var dictionary = {};
+
+            for (var i = 0; i < arrayToBeHandled.length; i++) {
+                var dictItem = dictionary[arrayToBeHandled[i]];
+                
+                if (typeof dictItem === 'undefined') {
+                    dictItem = {};
+                    dictionary[arrayToBeHandled[i]] = dictItem;
+                }
+    
+                dictionary[arrayToBeHandled[i]]["index" + i] = i;
+            }
+            alert(dictionary["56"]["index3"]);
+
+
+            for (var key in dictionary)
+            {    
+            var dictItem = dictionary[key];
+            
+            if (typeof dictItem === 'undefined') {
+                continue;
+            }
+            
+            document.writeln(key);   
+            document.writeln(': [');
+            
+            for (var dictItemKey in dictItem)
+            {
+                document.writeln(dictItemKey);
+            }
+            
+            document.writeln(']');
+            document.writeln('</br>');
+            }
+        </script>
+        </p>
+
 </body>
 </html>
